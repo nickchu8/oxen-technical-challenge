@@ -40,36 +40,36 @@ df = pd.DataFrame(post_list) #create dataframe from our list
 csv_path = "oxennbareddit.csv" 
 df.to_csv(csv_path, index=False, encoding='utf-8') #create csv!
 
-#now that we have the csv, let's upload it to oxen
-config_auth("SFMyNTY.g2gDbQAAAC9hcGlfa2V5X3YxOjZhMzc3ZDgwLWIzNDktNGJiMy05MTRjLTJlMWRiYzcyMzExOW4GAB6LNtWLAWIAAVGA.Uv6DnRrz5XM8XNdYXpFXQoymIcrIzBc4omLzFknYCho")
-config_user("Nicholas Chu", "nyc8pv@gmail.com")
+# #now that we have the csv, let's upload it to oxen
+# config_auth("SFMyNTY.g2gDbQAAAC9hcGlfa2V5X3YxOjZhMzc3ZDgwLWIzNDktNGJiMy05MTRjLTJlMWRiYzcyMzExOW4GAB6LNtWLAWIAAVGA.Uv6DnRrz5XM8XNdYXpFXQoymIcrIzBc4omLzFknYCho")
+# config_user("Nicholas Chu", "nyc8pv@gmail.com")
 
-# Create an empty directory named redditchallenge
-directory = "redditchallenge"
-os.makedirs(directory)
+# # Create an empty directory named redditchallenge
+# directory = "redditchallenge"
+# os.makedirs(directory)
 
-# Initialize the Oxen Repository
-repo = oxen.init(directory)
+# # Initialize the Oxen Repository
+# repo = oxen.init(directory)
 
-# Create a README.md file
-filename = os.path.join(repo.path, "README.md")
-with open(filename, "w") as f:
-    f.write("# Scraping r/nba to get 1000 hot posts")
-# Commit the changes to the repository
-repo.commit("Adding README.md")
+# # Create a README.md file
+# filename = os.path.join(repo.path, "README.md")
+# with open(filename, "w") as f:
+#     f.write("# Scraping r/nba to get 1000 hot posts")
+# # Commit the changes to the repository
+# repo.commit("Adding README.md")
 
-# Create a remote repository
-remote_name = "nickchu8/redditchallenge"
-create_repo(remote_name)
+# # Create a remote repository
+# remote_name = "nickchu8/redditchallenge"
+# create_repo(remote_name)
 
-# Load the local repository
-local_repo = LocalRepo("redditchallenge")
+# # Load the local repository
+# local_repo = LocalRepo("redditchallenge")
 
-# Point the local repository to the remote
-local_repo.set_remote(remote_name)
+# # Point the local repository to the remote
+# local_repo.set_remote(remote_name)
 
-# Push the changes to the remote repository
-local_repo.push()
+# # Push the changes to the remote repository
+# local_repo.push()
 
-# Add the README.md file to the staging area
-repo.add(filename)
+# # Add the README.md file to the staging area
+# repo.add(filename)
